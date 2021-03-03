@@ -68,6 +68,7 @@ a:hover, a:focus{
 
 img{
 	max-width: 100%;
+	height: auto;
 }
 
 #navigation a {
@@ -170,11 +171,6 @@ ol li {
 
 /* container for all items */
 
-.main-container {
-	display: flex;
-	justify-content:center;
-}
-
 .main-item {
 	padding: 5em;
 	padding-top: 0em;
@@ -184,27 +180,6 @@ ol li {
 .grid-container {
 	display:grid;
 	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.primary-container {
-	display: flex;
-}
-
-.primary-item1 {
-	flex:1;
-	flex-direction:column;
-	margin-right: 2em;
-}
-
-.primary-item2 {
-	flex:2;
-	flex-direction:column;
-	margin-right: 2em;
-}
-
-.primary-item3 {
-	flex:3;
-	flex-direction:column;
 }
 
 #nav li {
@@ -222,7 +197,7 @@ ol li {
 	margin-bottom: 2em;
 }
 
-.logoo {
+.logo-navsample {
 	margin-right: 16em;
 }
 
@@ -316,12 +291,6 @@ img {
 }
 
 /* product detail page */
-.product-image-container {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 2.5em;
-	margin-bottom: 2em;
-}
 
 .product-name{
 	/* font-size: 32px */
@@ -335,13 +304,13 @@ img {
 	font-weight: 400; 
 }
 
-.detail-item {
+.detail-container {
 	margin-left: 5em;
 	margin-top: -2em;
 }
 
 
-.flavour-item2 {
+.right-flavour-item {
 	margin-left: 1em;
 }
 
@@ -359,13 +328,13 @@ img {
 	font-size:0.9em;
 }
 
-.detail-item h3 {
+.detail-container h3 {
 	margin-bottom:1em;
 	margin-top:0em;
 	font-size: 1.4em;
 }
 
-.detail-item h4 {
+.detail-container h4 {
 	margin-top:0.8em;
 	margin-bottom:0.8em;
 	font-size:1em;
@@ -376,8 +345,30 @@ img {
 	list-style-type: none;
 }
 
+#all-recipes ul{
+	padding: 0;
+}
+
 .read-more{
 
+}
+
+/* Checkout module */
+.subtotal-item li{
+	list-style-type: none;
+}
+
+/*Shopping cart module*/
+
+button#cart_button{
+	padding: 0;
+	border:none;
+	cursor: pointer;
+	background-color: white;
+}
+
+#cart-image{
+	border-radius: 4% 
 }
 
 /* Form label styling */
@@ -471,58 +462,46 @@ input {
 	margin-top: 2.5em;
 }
 
-.second-container {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 2.5em;
-	margin-bottom: 2em;
-}
 
-.second-items input {
+.summary-checkout-container input {
 	width: 10em;
 }
 
-.first-items default-button {
+.guest-checkout-container default-button {
 	margin-top: 1.5em;
 }
 
-.second-items {
+.summary-checkout-container {
 	margin-left: 8em;
 }
 
-.mini-containers {
-	display: flex;
-	margin-top: 1.5em;
-	margin-bottom: -1.5em;
-}
-
-.mini-item22{
+.details-purchased{
 	margin-left: 2em;
 	margin-top: -1em;
 }
 
-.mini-item22 p{
+.details-purchased p{
 	margin-top: -0.5em;
 }
 
-.small-container {
+.subtotal-item {
 	display: flex;
 	margin-left:-2em;
 	margin-top:-1em;
 }
 
-.small-container li {
+.subtotal-item li {
 	list-style-type: none;
 	margin-top: 1.3em;
 	font-size: 0.8em;
 }
 
-.small-item2 {
+.price-subtotal {
 	margin-left: 8em;
 	text-align: right;
 }
 
-.small-item {
+.labels-price {
 	margin-left:-0.5em;
 }
 
@@ -531,7 +510,7 @@ hr {
 	margin-bottom: 2em;
 }
 
-.line {
+.line-checkout {
 	border-left: 1px solid black;
 	height: 27em;
 	margin-right: -3em;
@@ -563,63 +542,19 @@ hr {
 	font-size:0.9em;
 }
 
-.detail-item h3 {
+.detail-container h3 {
 	font-size: 1.3em;
 	margin-top:0em;
 	margin-bottom:0em;
 }
 
-.detail-item h4 {
+.detail-container h4 {
 	margin-top:0.5em;
 	font-size:1em;
 }
 
 /* website grid structure section */
 
-.g-container {
-	background-color: rgb(150, 150, 150);
-	display:grid;
-	grid-template-columns:repeat(8,1fr);
-	grid-template-rows: 3rem 14em 9em 7em 7em 9em 6em;
-}
-
-#logoo {
-	background:rgb(100,100,100);
-	grid-column-start:1;
-    grid-column-end:2;
-}
-
-#navbar {
-	background-color: rgb(40,61,59);
-	grid-column-start:2;
-    grid-column-end:9;
-}
-
-#banner{
-	background:rgb(225,225,225);
-	grid-column-start:1;
-    grid-column-end:9;
-}
-
-#main {
-	background-color: rgb(200, 200, 200);
-	grid-column-start:1;
-    grid-column-end:9;
-}
-
-#recipe {
-	background-color: rgb(200, 200, 200);
-	grid-column-start:1;
-    grid-column-end:9;
-}
-
-.row-container{
-	grid-column: 2 / 8;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 1.5rem;
-    padding:0.5em;
-}
 
  footer{
  	background-color: rgb(40,61,59);

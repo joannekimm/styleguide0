@@ -8,7 +8,7 @@ p {
 	max-width: 45em;
 	margin-top: 1em;
 	margin-bottom: 1.5em;
-	line-height: 1.6em;
+	line-checkout-height: 1.6em;
 }
 
 figure img {
@@ -31,7 +31,7 @@ ol li {
 	margin-bottom: 7em;
 }
 
-#nav, #product, #grid, #checkout, #footer, #recipe-detail, #all-recipes, #breadcrumbs, #recommended{
+#nav, #product, #grid, #checkout, #footer, #recipe-detail, #all-recipes, #breadcrumbs, #recommended, #cart{
 	margin-bottom: 6em;
 }
 
@@ -40,14 +40,9 @@ ol li {
 }
 
 /* container for all items */
-.main-container {
+.main-container, .nav-container {
 	display: flex;
 	justify-content:center;
-}
-
-.main-item {
-	padding: 5em;
-	padding-top: 0em;
 }
 
 /* UI Pattern elements css */
@@ -85,9 +80,6 @@ ol li {
 	margin-left: 1em;
 }
 
-.logoo {
-	margin-right: 16em;
-}
 
 #colors img {
 	display:block;
@@ -163,19 +155,19 @@ img {
 }
 
 /* product detail page */
-.product-image-container {
+.product-module {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 2.5em;
 	margin-bottom: 2em;
 }
 
-.detail-item {
+.detail-container {
 	margin-left: 3em;
 	margin-top:-1.8em;
 }
 
-.detail-item {
+.detail-container {
 	margin-left: 5em;
 	margin-top: -2em;
 }
@@ -189,58 +181,42 @@ img {
 	margin-top: 2.5em;
 }
 
-.second-container {
+.checkout-module {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 2.5em;
 	margin-bottom: 2em;
 }
 
-.second-items input {
-	width: 10em;
-}
-
-.first-items button {
+.guest-checkout-container button {
 	margin-top: 1.5em;
 }
 
-.second-items {
-	margin-left: 8em;
-}
-
-.mini-containers {
+.purchased-summary-item {
 	display: flex;
 	margin-top: 1.5em;
 	margin-bottom: -1.5em;
 }
 
-.mini-item22{
-	margin-left: 2em;
-	margin-top: -1em;
-}
-
-.mini-item22 p {
+.details-purchased p {
 	margin-top:-1em;
 	font-size:0.9em;
 }
 
-.mini-item22 h4 {
+.details-purchased h4 {
 	font-size: 1em;
 }
 
-.small-container {
+.subtotal-item {
 	display: flex;
 	margin-left:-2em;
 }
 
-.small-item2 {
+.price-subtotal {
 	margin-left: 8em;
 	text-align: right;
 }
 
-.small-item {
-	margin-left:-0.5em;
-}
 
 hr {
 	margin-top: 2em;
@@ -276,12 +252,11 @@ hr {
 }
 
 .recipe-container {
-
-  display:flex;
-  flex-wrap:wrap;
-  background-color: #F6F0E9;
-  margin-top:4em;
-  margin-bottom:4em;
+	display:flex;
+	flex-wrap:wrap;
+	background-color: #F6F0E9;
+	margin-top:4em;
+	margin-bottom:4em;
 }
 
 #recipe-detail li{
@@ -304,13 +279,13 @@ hr {
 	margin-top: 3em;
 }
 
-.instructions-item {
+.instructions-image {
 	margin-right: 2em;
 }
 
 /* all recipes module */
 
-.recipe-preview{
+.recipe-preview-container{
     display: flex;
     flex-wrap: wrap;
 }
@@ -323,13 +298,43 @@ hr {
 .recipe-blurb {
 	width: 30em;
 }
-
 .recipe-blurb li {
 	font-size: 0.8em;
 	margin-bottom: 0.5em;
 }
 
-/*Recommended for you module  */
+/*Shopping cart module*/
+.cart-grid-container{
+	display: grid;
+	grid-template-columns: 0.2fr 0.85fr 1.2fr 0.5fr 0.5fr;
+	grid-column-gap: 0.5rem;
+	padding-bottom: 1rem;
+}
+
+.cart-subtotal{
+	grid-column: 4/6;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 0.5rem;
+	padding-bottom: 1rem;
+}
+
+.product-cart-detail{
+	grid-column: 3/6;
+	display: grid;
+	grid-template-columns: 1.2fr 0.5fr 0.5fr;
+}
+
+.cart-description{
+	display: flex;
+	align-items: center;
+}
+
+.cart-quantity{
+	
+}
+
+/*Recommended for you module */
 
 .recommended-grid {
 	display:grid;
@@ -375,7 +380,7 @@ hr {
 	grid-template-rows: 3rem 14em 9em 7em 7em 9em 6em;
 }
 
-#logoo {
+#logo-gridsample {
 	background:rgb(100,100,100);
 	grid-column-start:1;
     grid-column-end:2;
@@ -393,17 +398,12 @@ hr {
     grid-column-end:9;
 }
 
-#main {
+#main, #recipe {
 	background-color: rgb(200, 200, 200);
 	grid-column-start:1;
     grid-column-end:9;
 }
 
-#recipe {
-	background-color: rgb(200, 200, 200);
-	grid-column-start:1;
-    grid-column-end:9;
-}
 
 .row-container{
 	grid-column: 2 / 8;
@@ -447,7 +447,7 @@ hr {
        width: 100%;
    }
 
-   .detail-item {
+   .detail-container {
        margin-left:0em;
        margin-top:1em;
    }
@@ -456,16 +456,16 @@ hr {
        flex-basis:100%;
    }
 
-   .image-item img {
+   .image-container img {
        width:100%;
    }
 
-   .second-items {
+   .summary-checkout-container {
        margin-left: 0em;
        margin-top:3em;
    }
 
-   .line {
+   .line-checkout {
        display:none;
    }
 
@@ -489,7 +489,7 @@ hr {
        margin-right: -2.7em;
    }
 
-   .logoo {
+   .logo-navsample {
        margin-right:0em;
        margin-left: -2em;
    }
@@ -503,17 +503,17 @@ hr {
        width: 10em;
    }
 
-   .detail-item h3 {
+   .detail-container h3 {
        font-size: 1.5em;
    }
 
-   .first-items input {
+   .guest-checkout-container input {
        width: 21.5em;
        height: 2em;
        margin-top:0.5em;
    }
 
-   .second-items input {
+   .summary-checkout-container input {
        width: 15em;
        height: 2em;
    }
@@ -524,22 +524,22 @@ hr {
        margin-top:0.5em;
    }
 
-   .small-container li {
+   .subtotal-item li {
        font-size:1em;
    }
 
-   .small-item2 li{
+   .price-subtotal li{
        justify-content: right;
        margin-left:2.5em;
    }
 
-   .mini-item11 img{
+   .image-purchased img{
        width:8.5em;
        margin-bottom:2em;
 
    }
 
-   .mini-item22 h4{
+   .details-purchased h4{
        font-size:1.1em;
        margin-bottom:0em;
 
@@ -569,15 +569,11 @@ hr {
    	   margin-top:1em;
    }
 
-   .recipe-container{
-   	width:100%;
-   }
-
-   .instructions-item {
+   .instructions-image {
 	   margin: 1em 0;
     }
 
-   .mini-item22 p {
+   .details-purchased p {
    	   margin-top: 1em;
    }
 
@@ -591,11 +587,43 @@ hr {
 
     .recommended-grid {
 		display:grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
     }
 
     #recommended {
 		padding:0em;
+    }
+
+	.product-cart-detail{
+		grid-column: 3/5;
+		grid-column-start: 3;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.cart-quantity{
+		grid-column-start: 1;
+	}
+	.cart-header{
+		visibility: hidden;
+	}
+	.cart-subtotal{
+		grid-column: 3/4;
+	}
+
 }
+
+@media (max-width: 40em) {
+	.cart-grid-container{
+		grid-template-columns: 0.3fr 1fr;
+	}
+	.product-cart-detail{
+		grid-column: 2/3;
+		grid-column-start: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.cart-subtotal{
+		grid-column-start: 2;
+	}
 
 }
